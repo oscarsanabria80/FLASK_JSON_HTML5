@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Inicio</title>
+
+</head>
+
+<body>
+
+<!-------------------------------------------------------------------------------------->
+
+<h1>Tienda de libros</h1>
+
+    <ul>
+
+    {% for libro in libros %}
+
+        {% if libro.isbn %}
+
+            <li><a href="/libro/{{libro.isbn}}">{{libro.title}}</a></li>
+
+        {% else %}
+
+            <li><a href='/'>No contiene ISBN</a></li>
+
+        {% endif %}
+    {% endfor %}
+    
+    </ul>
+
+<!-------------------------------------------------------------------------------------->
+    
+</body>
+
+</html>
