@@ -1,16 +1,16 @@
-from flask import Flask, render_template, abort
-import json
 import os
+from flask import Flask, render_template, abort,request
+import json
+app = Flask(__name__)
+
 
 with open("books.json") as libros:
     datos=json.load(libros)
-    
-app=Flask(__name__)
 
 
 @app.route('/')
 def inicio():
-    return render_template('inicio.html', libros=datos)
+    return render_template("inicio.html", libros=datos)
 
 @app.route('/libro/<isbn>')
 def libro(isbn):
