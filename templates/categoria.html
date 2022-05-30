@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block contenido %}
+
+<!DOCTYPE html>
+<html >
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>{{categoria}}</title>
+
+</head>
+
+<body>
+
+<!-------------------------------------------------------------------------------------->
+    <h1>{{categoria}}</h1>
+
+    {% for li in libros %}
+
+        {% if li.categories %}
+            <li>
+                {{li.title}}
+            </li>
+    
+        {% endif %}
+    
+    {% endfor %}
+
+    <h2 class="o">VOLVER AL INICIO</h2>
+
+    <p class="osc"><a href="/">ELIGE UN LIBRO DE NUEVO...</a></p>
+<!-------------------------------------------------------------------------------------->
+
+</body>
+
+</html>
+
+{% endblock %}
